@@ -1,0 +1,17 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+title System Context diagram for Client Cache Web Application
+
+Person(user, "User", "A user of the web application.")
+System(app_system, "Web App", "Provides interface to data and caches it")
+
+System_Ext(database_system, "Backend Database", "Stores data")
+
+Rel(user, app_system, "Uses")
+Rel(app_system, database_system, "Uses")
+@enduml
