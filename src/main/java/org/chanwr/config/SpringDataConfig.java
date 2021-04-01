@@ -15,11 +15,11 @@ public class SpringDataConfig {
 
     @Bean
     public Ignite igniteInstance() {
-        IgniteConfiguration config = new IgniteConfiguration();
-        CacheConfiguration<Integer, EmployeeDTO> cache = new CacheConfiguration<>("employeeCache");
-        cache.setIndexedTypes(Integer.class, EmployeeDTO.class);
-        config.setCacheConfiguration(cache);
-        return Ignition.start(config);
+        IgniteConfiguration igniteCfg = new IgniteConfiguration();
+        CacheConfiguration<Integer, EmployeeDTO> cacheCfg = new CacheConfiguration<>("employeeCache");
+        cacheCfg.setIndexedTypes(Integer.class, EmployeeDTO.class);
+        igniteCfg.setCacheConfiguration(cacheCfg);
+        return Ignition.start(igniteCfg);
     }
 
 }

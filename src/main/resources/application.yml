@@ -2,3 +2,10 @@ server:
   tomcat:
     accesslog:
       enabled: true
+      # https://community.pivotal.io/s/article/how-to-configure-access-log-entries-for-a-spring-boot-app?language=en_US
+      directory: "/dev"
+      prefix: stdout
+      buffered: false
+      suffix:
+      file-date-format:
+      pattern: "[ACCESS] %{org.apache.catalina.AccessLog.RemoteAddr}r %l %t %D %F %B %S vcap_request_id:%{X-Vcap-Request-Id}i"
