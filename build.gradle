@@ -11,6 +11,12 @@ repositories {
     mavenCentral()
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
 dependencies {
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
     annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
