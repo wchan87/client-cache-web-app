@@ -8,7 +8,7 @@
 
 ## Run Instructions
 
-1. For Version 2
+1. For Version 2 - Based on [Apache Ignite documentation on installing using Docker](https://ignite.apache.org/docs/latest/installation/installing-using-docker)
     ```
     ./gradlew bootRun
     ./gradlew bootJar
@@ -21,6 +21,7 @@
     mkdir -p build/dependency && (cd build/dependency; jar -xf ../libs/*.jar)
     docker build --build-arg DEPENDENCY=build/dependency -t org.chanwr/client-cache-web-app .
     ```
+3. During local development, use http://localhost:8080/swagger-ui.html
 
 ## Docs
 
